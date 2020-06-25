@@ -1,0 +1,146 @@
+﻿@model Reservation_Booking.Models.personalclass
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="row">
+            <div class="col-sm-6">
+
+
+
+                @Html.LabelFor(model => model.bookingDate, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.bookingDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.bookingDate, "", new { @class = "text-danger" })
+
+
+            </div>
+
+
+            <div class="col-sm-6">
+                @Html.LabelFor(model => model.idNo, htmlAttributes: new { @class = "control-label" })
+
+                @Html.EditorFor(model => model.idNo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.idNo, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                @Html.LabelFor(model => model.nameOfCustomer, htmlAttributes: new { @class = "control-label" })
+
+                @Html.EditorFor(model => model.nameOfCustomer, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.nameOfCustomer, "", new { @class = "text-danger" })
+            </div>
+
+
+            <div class="col-sm-6">
+                @Html.LabelFor(model => model.mobileNo, htmlAttributes: new { @class = "control-label" })
+
+                @Html.EditorFor(model => model.mobileNo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.mobileNo, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                @Html.LabelFor(model => model.address, htmlAttributes: new { @class = "control-label" })
+
+                @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
+            </div>
+
+
+            <div class="col-md-6">
+                @Html.LabelFor(model => model.remarks, htmlAttributes: new { @class = "control-label" })
+
+                @Html.EditorFor(model => model.remarks, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.remarks, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+        <hr />
+
+        <div class="row" style="display:flex ; justify-content:space-between">
+
+            <div class="col-xs-1 ">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.mehndi)
+                    <strong>  @Html.ValidationMessageFor(model => model.mehndi, "MEHNDI", new { @class = "text-primary" })</strong>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="col-xs-1">
+
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.nikah)
+                    <strong>   @Html.ValidationMessageFor(model => model.nikah, "NIKAAH", new { @class = "text-danger" })</strong>
+                </div>
+
+
+            </div>
+
+
+
+
+            <div class="col-xs-1">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.baarat)
+                    <strong>  @Html.ValidationMessageFor(model => model.baarat, "BARAAT", new { @class = "text-danger" })</strong>
+                </div>
+            </div>
+
+
+
+            
+                <div class="col-xs-1">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.walima)
+                        <strong>@Html.ValidationMessageFor(model => model.walima, "WALIMA", new { @class = "text-danger" })</strong>
+                    </div>
+                </div>
+           
+
+
+                
+
+                    <div class="col-xs-1">
+                        <div class="checkbox">
+                            @Html.EditorFor(model => model.party)
+                            <strong>   @Html.ValidationMessageFor(model => model.party, "PARTY", new { @class = "text-danger" })</strong>
+                        </div>
+                    </div>
+             
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
